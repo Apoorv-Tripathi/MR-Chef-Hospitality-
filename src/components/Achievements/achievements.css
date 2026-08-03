@@ -1,0 +1,78 @@
+.mch-ach {
+  background: var(--color-bg-alt);
+}
+
+.mch-ach__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding-bottom: var(--space-section-sm);
+  border-bottom: var(--border-hairline);
+  margin-bottom: var(--space-section-sm);
+}
+
+.mch-ach__stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  color: var(--color-primary);
+}
+
+.mch-ach__stat-label {
+  display: block;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  margin-top: 0.5rem;
+}
+
+.mch-ach__list {
+  margin-top: 2rem;
+  max-width: 900px;
+}
+
+.mch-ach__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: var(--border-hairline);
+}
+
+.mch-ach__list .mch-ach__row:last-child {
+  border-bottom: var(--border-hairline);
+}
+
+.mch-ach__row-year {
+  font-family: var(--font-display);
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.mch-ach__row-title {
+  font-size: var(--fs-body-lg);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+}
+
+.mch-ach__row-org {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .mch-ach__stats {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+  .mch-ach__row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  .mch-ach__row-org {
+    text-align: left;
+  }
+}

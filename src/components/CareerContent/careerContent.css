@@ -1,0 +1,137 @@
+.mch-career {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.mch-career__culture {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.mch-career__culture-text h2 {
+  color: var(--color-secondary);
+  font-size: var(--fs-h2);
+  max-width: 14em;
+  margin-top: 1rem;
+}
+
+.mch-career__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.mch-career__perks span {
+  font-size: var(--fs-small);
+  color: var(--color-secondary);
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.mch-career__perks i {
+  color: var(--color-gold);
+}
+
+.mch-career-roles {
+  background: var(--color-bg);
+}
+
+.mch-career-roles__list {
+  margin-top: 1.75rem;
+  max-width: 760px;
+}
+
+.mch-career-roles__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-top: var(--border-hairline);
+}
+
+.mch-career-roles__list .mch-career-roles__row:last-child {
+  border-bottom: var(--border-hairline);
+}
+
+.mch-career-roles__row h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.mch-career-roles__row span {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+/* ---- Apply modal ---- */
+.mch-apply-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.mch-apply-modal {
+  position: relative;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  max-width: 440px;
+  width: 100%;
+  padding: 2.25rem;
+}
+
+.mch-apply-modal h3 {
+  font-size: var(--fs-h4);
+  margin-bottom: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.mch-apply-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.mch-apply-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mch-apply-modal input,
+.mch-apply-modal textarea {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  background: var(--color-bg-alt);
+  resize: none;
+}
+
+.mch-apply-modal button[type="submit"] {
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .mch-career-roles__row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

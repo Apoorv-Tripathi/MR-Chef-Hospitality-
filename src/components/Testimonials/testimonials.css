@@ -1,0 +1,95 @@
+.mch-testimonials {
+  background: var(--color-bg-alt);
+}
+
+.mch-testimonials__heading {
+  font-size: var(--fs-h1);
+  max-width: 14em;
+  margin-bottom: 3.5rem;
+}
+
+.mch-testimonials__stage {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.mch-testimonials__mark {
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+
+.mch-testimonials__card {
+  min-height: 220px;
+}
+
+.mch-testimonials__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.4;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.mch-testimonials__person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.mch-testimonials__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.mch-testimonials__person div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.mch-testimonials__person strong {
+  font-size: var(--fs-body);
+  color: var(--color-text);
+}
+
+.mch-testimonials__person span {
+  font-size: var(--fs-caption);
+  color: var(--color-text-muted);
+}
+
+.mch-testimonials__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.5rem;
+}
+
+.mch-testimonials__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-line);
+  border: none;
+  padding: 0;
+  transition: all var(--dur-fast) var(--ease-soft);
+}
+
+.mch-testimonials__dot.is-active {
+  background: var(--color-accent);
+  width: 22px;
+  border-radius: 4px;
+}

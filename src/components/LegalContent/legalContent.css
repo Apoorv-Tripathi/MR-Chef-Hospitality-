@@ -1,0 +1,35 @@
+.mch-legal {
+  background: var(--color-bg);
+}
+
+.mch-legal__inner {
+  max-width: 760px;
+}
+
+.mch-legal__updated {
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-muted);
+  margin-bottom: 3rem;
+}
+
+.mch-legal__block {
+  padding: 1.75rem 0;
+  border-top: var(--border-hairline);
+}
+
+.mch-legal__inner .mch-legal__block:last-child {
+  border-bottom: var(--border-hairline);
+}
+
+.mch-legal__block h2 {
+  font-size: var(--fs-h4);
+  margin-bottom: 0.75rem;
+}
+
+.mch-legal__block p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-body);
+  line-height: 1.75;
+}

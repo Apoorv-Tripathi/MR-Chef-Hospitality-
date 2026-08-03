@@ -1,0 +1,66 @@
+.mch-phil {
+  background: var(--color-bg-alt);
+}
+
+.mch-phil__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: var(--space-section-sm);
+  border-bottom: var(--border-hairline);
+  margin-bottom: var(--space-section-sm);
+}
+
+.mch-phil__label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+}
+
+.mch-phil__block p {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  max-width: 32em;
+}
+
+.mch-phil__values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.mch-phil__value {
+  padding: 2rem 0;
+  border-top: var(--border-hairline);
+}
+
+.mch-phil__value i {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.mch-phil__value h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.mch-phil__value p {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 991px) {
+  .mch-phil__top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .mch-phil__values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

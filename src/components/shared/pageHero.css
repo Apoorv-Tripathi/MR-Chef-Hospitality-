@@ -1,0 +1,41 @@
+.mch-page-hero {
+  background: var(--color-primary);
+  padding-top: clamp(9rem, 14vw, 12rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.mch-page-hero__crumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-secondary);
+  opacity: 0.55;
+  margin-bottom: 2.5rem;
+}
+
+.mch-page-hero__crumb a:hover {
+  color: var(--color-gold);
+}
+
+.mch-page-hero__heading {
+  font-size: var(--fs-h1);
+  color: var(--color-secondary);
+  max-width: 16em;
+  margin-bottom: 2rem;
+}
+
+.mch-page-hero__heading em {
+  font-style: normal;
+  color: var(--color-accent-light);
+}
+
+.mch-page-hero__sub {
+  font-size: var(--fs-body-lg);
+  color: var(--color-secondary);
+  opacity: 0.7;
+  max-width: 38em;
+  font-weight: 300;
+}

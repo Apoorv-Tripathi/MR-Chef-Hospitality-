@@ -1,0 +1,63 @@
+.mch-cta {
+  background: var(--color-primary);
+  padding: clamp(5rem, 12vw, 9rem) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mch-cta__glow {
+  position: absolute;
+  left: var(--mx, 50%);
+  top: var(--my, 50%);
+  width: 480px;
+  height: 480px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(179, 18, 46, 0.22), transparent 70%);
+  pointer-events: none;
+  transition: left 0.4s var(--ease-soft), top 0.4s var(--ease-soft);
+}
+
+.mch-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.mch-cta__heading {
+  font-size: var(--fs-h1);
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.mch-cta__text {
+  color: var(--color-secondary);
+  opacity: 0.7;
+  font-size: var(--fs-body-lg);
+  margin-bottom: 2.5rem;
+}
+
+.mch-cta__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.mch-cta__phone {
+  color: var(--color-secondary);
+  font-size: var(--fs-body-lg);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast);
+}
+
+.mch-cta__phone:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}

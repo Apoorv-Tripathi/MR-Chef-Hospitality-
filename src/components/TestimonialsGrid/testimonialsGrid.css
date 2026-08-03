@@ -1,0 +1,64 @@
+.mch-tg {
+  background: var(--color-bg);
+}
+
+.mch-tg__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.mch-tg__card {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.85rem;
+}
+
+.mch-tg__card i {
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.mch-tg__card p {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+  min-height: 5em;
+}
+
+.mch-tg__card div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.mch-tg__card strong {
+  font-size: var(--fs-body);
+  color: var(--color-text);
+}
+
+.mch-tg__card span {
+  font-size: var(--fs-caption);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 991px) {
+  .mch-tg__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  .mch-tg__grid {
+    grid-template-columns: 1fr;
+  }
+  .mch-tg__card p {
+    min-height: 0;
+  }
+}
