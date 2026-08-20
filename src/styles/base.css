@@ -117,24 +117,35 @@ select:focus-visible {
   background: var(--color-gold);
 }
 
+/* ---- Section helpers ---- */
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+.section-dark {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
 /* ---- Buttons ---- */
 .btn-lux {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 0.65rem;
   font-family: var(--font-body);
   font-size: var(--fs-small);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  font-weight: 500;
-  padding: 1.05rem 2.2rem;
+  font-weight: 600;
+  padding: 0.95rem 2rem;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   transition: all var(--dur-fast) var(--ease-soft);
   white-space: nowrap;
   overflow: hidden;
   isolation: isolate;
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-lux.primary {
@@ -142,25 +153,40 @@ select:focus-visible {
   color: var(--color-white);
 }
 .btn-lux.primary:hover {
-  background: var(--color-primary);
+  background: var(--color-accent-hover);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(179, 18, 46, 0.35);
+}
+
+.btn-lux.gold {
+  background: linear-gradient(135deg, var(--color-gold) 0%, #B89255 100%);
+  color: #12100E;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn-lux.gold:hover {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.4);
 }
 
 .btn-lux.outline {
   background: transparent;
-  border-color: currentColor;
+  border-color: var(--color-line);
   color: var(--color-primary);
 }
 .btn-lux.outline:hover {
   background: var(--color-primary);
   color: var(--color-bg);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
 .btn-lux.outline-light {
-  background: transparent;
-  border-color: var(--color-line-on-dark);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
   color: var(--color-secondary);
+  backdrop-filter: blur(8px);
 }
 .btn-lux.outline-light:hover {
   background: var(--color-secondary);
@@ -169,11 +195,51 @@ select:focus-visible {
   transform: translateY(-2px);
 }
 
+.btn-lux.sm {
+  padding: 0.65rem 1.3rem;
+  font-size: var(--fs-caption);
+  letter-spacing: 0.08em;
+}
+
 .btn-lux .icon {
   transition: transform var(--dur-fast) var(--ease-soft);
 }
 .btn-lux:hover .icon {
   transform: translateX(4px);
+}
+
+/* ---- Glassmorphic Cards & Badges ---- */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.glass-card-dark {
+  background: var(--glass-bg-dark);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lux);
+}
+
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--color-gold-muted);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: var(--radius-full);
+  color: var(--color-gold);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ---- Section dividers ---- */
@@ -188,6 +254,137 @@ select:focus-visible {
   color: var(--color-text-muted);
 }
 
+.text-gold {
+  color: var(--color-gold);
+}
+
 .text-balance {
   text-wrap: balance;
+}
+
+/* ---- Royal Luxury Architectural Aesthetics ---- */
+.bg-royal-lattice {
+  background-color: #12100E;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(201, 169, 110, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 100%, rgba(179, 18, 46, 0.06) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0c2.5 6 8.5 11 14.5 13.5 6 2.5 9.5 8 9.5 10.5s-3.5 8-9.5 10.5C32.5 37 26.5 42 24 48c-2.5-6-8.5-11-14.5-13.5-6-2.5-9.5-8-9.5-10.5s3.5-8 9.5-10.5C15.5 11 21.5 6 24 0z' fill='%23C9A96E' fill-opacity='0.032' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.section-royal {
+  background-color: #12100E;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(201, 169, 110, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 80% 100%, rgba(179, 18, 46, 0.06) 0%, transparent 55%),
+    url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0c2.5 6 8.5 11 14.5 13.5 6 2.5 9.5 8 9.5 10.5s-3.5 8-9.5 10.5C32.5 37 26.5 42 24 48c-2.5-6-8.5-11-14.5-13.5-6-2.5-9.5-8-9.5-10.5s3.5-8 9.5-10.5C15.5 11 21.5 6 24 0z' fill='%23C9A96E' fill-opacity='0.032' fill-rule='evenodd'/%3E%3C/svg%3E");
+  color: var(--color-secondary);
+}
+
+/* Ornate Royal Heading Flourish */
+.royal-flourish {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.65rem 0 1.25rem 0;
+  color: var(--color-gold);
+}
+
+.royal-flourish::before,
+.royal-flourish::after {
+  content: "";
+  display: inline-block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold));
+}
+
+.royal-flourish::after {
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.royal-flourish i {
+  font-size: 1rem;
+}
+
+/* Arch Frame Silhouette with Gold Border */
+.arch-frame-gold {
+  position: relative;
+  border-radius: 180px 180px 16px 16px;
+  overflow: hidden;
+  border: 2px solid rgba(201, 169, 110, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 25px rgba(201, 169, 110, 0.15);
+}
+
+.arch-frame-gold img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-soft);
+}
+
+.arch-frame-gold:hover img {
+  transform: scale(1.04);
+}
+
+/* Concentric Gold Circular Feature Pods */
+.pod-concentric {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 110, 0.5);
+  background: rgba(18, 16, 14, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--dur-fast) var(--ease-soft);
+  flex-shrink: 0;
+}
+
+.pod-concentric::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px dashed rgba(201, 169, 110, 0.35);
+  transition: all var(--dur-fast);
+}
+
+.pod-concentric i {
+  font-size: 1.5rem;
+  color: var(--color-gold);
+  z-index: 2;
+  transition: all var(--dur-fast);
+}
+
+.pod-concentric:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(179, 18, 46, 0.4);
+  transform: translateY(-3px);
+}
+
+.pod-concentric:hover::before {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.pod-concentric:hover i {
+  color: #FFFFFF;
+}
+
+/* Luxury Corner Status / Price Ribbon */
+.ribbon-gold {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, var(--color-gold) 0%, #B89255 100%);
+  color: #12100E;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 3;
 }

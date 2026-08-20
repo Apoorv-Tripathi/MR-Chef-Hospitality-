@@ -1,115 +1,167 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import BlueprintSVG from "./BlueprintSVG";
+import { motion, useScroll, useTransform } from "framer-motion";
 import "./hero.css";
 
-const headline = "We Build Hospitality Experiences.";
-const words = headline.split(" ");
+const PREVIEW_DISCS = [
+  {
+    num: "01",
+    img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=600&auto=format&fit=crop",
+    title: "Kitchen CAD & MEP",
+    sub: "HACCP Architecture",
+  },
+  {
+    num: "02",
+    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop",
+    title: "Direct OEM BOQs",
+    sub: "15-20% Sourcing Save",
+  },
+  {
+    num: "03",
+    img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=600&auto=format&fit=crop",
+    title: "Grand Opening & P&L",
+    sub: "90-Day Stabilization",
+  },
+];
 
 export default function Hero() {
-  const sectionRef = useRef(null);
-  const mvX = useMotionValue(0);
-  const mvY = useMotionValue(0);
-  const springX = useSpring(mvX, { stiffness: 40, damping: 20 });
-  const springY = useSpring(mvY, { stiffness: 40, damping: 20 });
-  const rotateX = useTransform(springY, [-0.5, 0.5], [3, -3]);
-  const rotateY = useTransform(springX, [-0.5, 0.5], [-3, 3]);
-  const shiftX = useTransform(springX, [-0.5, 0.5], [-14, 14]);
-  const shiftY = useTransform(springY, [-0.5, 0.5], [-10, 10]);
+  const containerRef = useRef(null);
 
-  const handleMouseMove = (e) => {
-    const rect = sectionRef.current.getBoundingClientRect();
-    mvX.set((e.clientX - rect.left) / rect.width - 0.5);
-    mvY.set((e.clientY - rect.top) / rect.height - 0.5);
-  };
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
-    <section
-      ref={sectionRef}
-      className="mch-hero"
-      onMouseMove={handleMouseMove}
-    >
-      <div className="mch-hero__blueprint-wrap">
+    <section ref={containerRef} className="mch-hero" id="hero">
+      {/* Cinematic Background Layer */}
+      <motion.div className="mch-hero__bg" style={{ y: bgY }}>
+        <img
+          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2000&auto=format&fit=crop"
+          alt="Luxury hospitality architectural ambiance"
+          className="mch-hero__bg-img"
+        />
+        <div className="mch-hero__overlay" />
+      </motion.div>
+
+      {/* Main Centered Content */}
+      <motion.div className="container-lux mch-hero__inner" style={{ opacity }}>
+        {/* Centered Royal Crest Emblem */}
         <motion.div
-          className="mch-hero__blueprint"
-          style={{ rotateX, rotateY, x: shiftX, y: shiftY }}
-        >
-          <BlueprintSVG className="mch-hero__blueprint-svg" />
-        </motion.div>
-      </div>
-
-      <div className="container-lux mch-hero__content">
-        <motion.p
-          className="eyebrow light"
-          initial={{ opacity: 0, y: 10 }}
+          className="mch-hero__crest-badge"
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          Hospitality Consultancy &amp; Turnkey Solutions
-        </motion.p>
+          <div className="mch-hero__crest-icon">
+            <i className="bi bi-crown" />
+            <span>MC</span>
+          </div>
+          <span className="mch-hero__crest-brand">MR CHEF HOSPITALITY</span>
+          <span className="mch-hero__crest-year">SINCE 2015</span>
+        </motion.div>
 
-        <h1 className="mch-hero__headline">
-          {words.map((word, i) => (
-            <span key={i} className="mch-hero__word-mask">
-              <motion.span
-                className="mch-hero__word"
-                initial={{ y: "110%" }}
-                animate={{ y: "0%" }}
-                transition={{
-                  delay: 0.5 + i * 0.09,
-                  duration: 0.9,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-              >
-                {word}&nbsp;
-              </motion.span>
-            </span>
-          ))}
-        </h1>
+        {/* Eyebrow Guarantee & Rating */}
+        <motion.div
+          className="mch-hero__guarantee"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span className="mch-hero__guarantee-tag">BEST HOSPITALITY CONSULTANCY GUARANTEED</span>
+          <div className="mch-hero__stars-row">
+            <span className="mch-hero__stars">★★★★★</span>
+            <span className="mch-hero__rating-text">50+ Venues Launched • 4.9 Rating</span>
+          </div>
+        </motion.div>
 
+        {/* Main Headline */}
+        <motion.h1
+          className="mch-hero__title"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        >
+          We Build Luxury Hotels &amp; High-Yield Restaurants
+        </motion.h1>
+
+        {/* Subtitle */}
         <motion.p
           className="mch-hero__sub"
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: 0.3, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          From concept to grand opening, Mr Chef Hospitality plans, designs,
-          and operationalises hotels, restaurants, resorts, cloud kitchens,
-          and commercial kitchens — so every venue we touch opens ready to
-          perform.
+          Full-spectrum turnkey execution from feasibility and MEP kitchen architecture to executive chef hiring and profitable opening night.
         </motion.p>
 
+        {/* Centered Glassmorphic Oval Pill Button */}
         <motion.div
-          className="mch-hero__actions"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="mch-hero__cta-wrap"
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Link to="/contact" className="btn-lux primary">
-            Start Your Project
-            <i className="bi bi-arrow-up-right icon" />
-          </Link>
-          <Link to="/services" className="btn-lux outline-light">
-            Explore Services
-          </Link>
+          <a href="#estimator" className="mch-hero__oval-btn">
+            <span>CALCULATE PROJECT SCOPE</span>
+            <i className="bi bi-calendar2-check-fill" />
+          </a>
         </motion.div>
-      </div>
-
-      <motion.div
-        className="mch-hero__scroll"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-      >
-        <span>Scroll</span>
-        <div className="mch-hero__scroll-line">
-          <motion.span
-            animate={{ y: ["0%", "160%"] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
       </motion.div>
+
+      {/* Symmetrical Undulating Wave with 3 Center Circular Image Discs */}
+      <div className="mch-hero__wave-container">
+        {/* 3 Circular Image Discs nestled in wave trough */}
+        <div className="mch-hero__discs-row">
+          {PREVIEW_DISCS.map((d, i) => (
+            <motion.div
+              key={i}
+              className="mch-hero__circular-disc"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 + i * 0.1, duration: 0.7 }}
+            >
+              <div className="mch-hero__disc-inner">
+                <img src={d.img} alt={d.title} />
+                <span className="mch-hero__disc-badge">{d.num}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Symmetrical Wave SVG with Metallic Gold Stroke */}
+        <svg
+          className="mch-hero__wave-svg"
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="heroWaveGold" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#C9A96E" stopOpacity="0.3" />
+              <stop offset="25%" stopColor="#E5C467" stopOpacity="1" />
+              <stop offset="50%" stopColor="#F9EDB8" stopOpacity="1" />
+              <stop offset="75%" stopColor="#E5C467" stopOpacity="1" />
+              <stop offset="100%" stopColor="#C9A96E" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,40 C360,140 1080,140 1440,40 L1440,160 L0,160 Z"
+            fill="#12100E"
+          />
+          <path
+            d="M0,40 C360,140 1080,140 1440,40"
+            stroke="url(#heroWaveGold)"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            fill="none"
+          />
+        </svg>
+      </div>
     </section>
   );
 }

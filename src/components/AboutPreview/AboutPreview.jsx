@@ -5,76 +5,117 @@ import "./aboutPreview.css";
 
 const STATS = [
   { to: 10, suffix: "+", label: "Years Experience" },
-  { to: 50, suffix: "+", label: "Projects Delivered" },
-  { to: 10, suffix: "+", label: "Cities" },
-  { to: 95, suffix: "%", label: "Client Satisfaction" },
+  { to: 50, suffix: "+", label: "Venues Delivered" },
+  { to: 150, prefix: "₹", suffix: "Cr+", label: "Asset Value" },
+  { to: 98, suffix: "%", label: "On-Time Launch" },
+];
+
+const HIGHLIGHTS = [
+  {
+    icon: "bi-building-check",
+    title: "Turnkey Accountability",
+    desc: "We place project directors on your physical site until opening night.",
+  },
+  {
+    icon: "bi-rulers",
+    title: "Kitchen MEP & CAD",
+    desc: "Engineered for 500+ covers with zero ventilation or plumbing bottlenecks.",
+  },
+  {
+    icon: "bi-cash-stack",
+    title: "15-20% Sourcing Save",
+    desc: "Direct factory pricing on refrigeration, cooking ranges & tableware.",
+  },
 ];
 
 export default function AboutPreview() {
   return (
-    <section className="mch-about section" id="about">
-      <div className="container-lux mch-about__grid">
-        <Reveal className="mch-about__image-col" y={40}>
-          <div className="mch-about__image-main">
-            <img
-              src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop"
-              alt="Architectural interior of a luxury hotel lobby"
-              loading="lazy"
-            />
-          </div>
-          <div className="mch-about__image-sub">
-            <img
-              src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop"
-              alt="Commercial kitchen design detail"
-              loading="lazy"
-            />
-          </div>
-          <div className="mch-about__badge">
-            <span className="mch-about__badge-num">10+</span>
-            <span className="mch-about__badge-text">Years building hospitality ventures</span>
-          </div>
-        </Reveal>
-
-        <div className="mch-about__content-col">
+    <section className="mch-about section section-royal" id="about">
+      <div className="container-lux">
+        {/* Top Centered Section Header with Royal Flourish */}
+        <div className="mch-about__head text-center">
           <Reveal>
-            <p className="eyebrow">Who We Are</p>
+            <div className="mch-about__crest">
+              <span className="mch-about__crest-badge">
+                <i className="bi bi-shield-shaded" /> MR CHEF
+              </span>
+            </div>
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mch-about__heading text-balance">
-              A consultancy built by operators, not theorists.
+              Hospitality Architecture &amp; Operations Built by Practitioners
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mch-about__text">
-              Mr Chef Hospitality partners with hotel groups, restaurateurs,
-              and resort developers from the first sketch to opening night.
-              We plan kitchens that hold up under Friday-night covers, design
-              spaces that photograph as well as they operate, and recruit the
-              teams that keep them running long after we've left the site.
-            </p>
+            <div className="royal-flourish">
+              <i className="bi bi-gem" />
+            </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="mch-about__text">
-              Concept development, F&amp;B operations, culinary consulting,
-              interior design, and staffing — under one roof, one point of
-              accountability, one standard of execution.
+            <p className="mch-about__lead text-muted-lux text-balance">
+              Most consultancies hand over a deck and walk away. Mr Chef Hospitality is a hands-on turnkey consultancy that partners with hotel owners, restaurateurs, and cloud kitchen operators from raw concrete to profitable opening night.
             </p>
           </Reveal>
-          <Reveal delay={0.2}>
-            <Link to="/about" className="btn-lux outline mch-about__cta">
-              Our Story
-              <i className="bi bi-arrow-up-right icon" />
-            </Link>
+        </div>
+
+        {/* 3-Column Luxury Display (Story + Arch Frame + Concentric Pods) */}
+        <div className="mch-about__showcase">
+          {/* Left Narrative Column */}
+          <div className="mch-about__story-col">
+            <Reveal delay={0.1}>
+              <h3 className="mch-about__subhead">Operator Heritage &amp; Single-Source Responsibility</h3>
+              <p className="mch-about__text">
+                Founded with a relentless commitment to operational excellence, we integrate spatial interior flow, MEP commercial kitchen design, chef headhunting, and financial yield controls under one single standard of execution.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="mch-about__stats-row">
+                {STATS.map((s, i) => (
+                  <div key={i} className="mch-about__stat-item">
+                    <span className="mch-about__stat-num text-gold">
+                      {s.prefix}
+                      <AnimatedCounter to={s.to} suffix={s.suffix} />
+                    </span>
+                    <span className="mch-about__stat-lbl">{s.label}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <Link to="/about" className="btn-lux gold mch-about__btn">
+                Discover Our Heritage <i className="bi bi-arrow-up-right icon" />
+              </Link>
+            </Reveal>
+          </div>
+
+          {/* Center Arch Window Frame */}
+          <Reveal delay={0.2} className="mch-about__arch-col">
+            <div className="mch-about__arch-outer">
+              <div className="mch-about__arch-badge">
+                <span>★ ARCHITECTURAL EXCELLENCE ★</span>
+              </div>
+              <div className="arch-frame-gold mch-about__arch-window">
+                <img
+                  src="https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop"
+                  alt="Luxury hospitality architectural interior"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </Reveal>
 
-          <div className="mch-about__stats">
-            {STATS.map((s, i) => (
-              <Reveal key={s.label} delay={0.1 + i * 0.08} y={16}>
-                <div className="mch-about__stat">
-                  <span className="mch-about__stat-num">
-                    <AnimatedCounter to={s.to} suffix={s.suffix} />
-                  </span>
-                  <span className="mch-about__stat-label">{s.label}</span>
+          {/* Right Concentric Feature Pods */}
+          <div className="mch-about__pods-col">
+            {HIGHLIGHTS.map((h, i) => (
+              <Reveal key={i} delay={0.15 + i * 0.08} className="mch-about__pod-item">
+                <div className="pod-concentric">
+                  <i className={`bi ${h.icon}`} />
+                </div>
+                <div className="mch-about__pod-info">
+                  <h4>{h.title}</h4>
+                  <p>{h.desc}</p>
                 </div>
               </Reveal>
             ))}

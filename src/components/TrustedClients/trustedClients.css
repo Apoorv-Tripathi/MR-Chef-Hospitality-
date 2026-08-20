@@ -1,47 +1,111 @@
 .mch-trusted {
-  background: var(--color-bg);
-  border-bottom: var(--border-hairline);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3.5rem 0 4rem 0;
+  position: relative;
+}
+
+.mch-trusted__head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mch-trusted__label {
-  text-align: center;
-  font-size: var(--fs-caption);
-  text-transform: uppercase;
-  letter-spacing: var(--ls-eyebrow);
-  color: var(--color-text-muted);
-  margin-bottom: 2.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-body);
+  font-weight: 700;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .mch-trusted__track-wrap {
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  padding: 0.5rem 0;
 }
 
 .mch-trusted__track {
   display: flex;
+  gap: 1.75rem;
   width: max-content;
-  animation: mch-marquee 32s linear infinite;
+  animation: mch-marquee 40s linear infinite;
 }
 
-.mch-trusted__item {
+.mch-trusted__track:hover {
+  animation-play-state: paused;
+}
+
+.mch-trusted__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: all var(--dur-fast) var(--ease-soft);
+  cursor: default;
+}
+
+.mch-trusted__card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(201, 169, 110, 0.2);
+}
+
+.mch-trusted__card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(201, 169, 110, 0.12);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.mch-trusted__card:hover .mch-trusted__card-icon {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+.mch-trusted__card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.mch-trusted__card-name {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.25rem, 2vw, 1.6rem);
-  color: var(--color-text-muted);
-  opacity: 0.55;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
   white-space: nowrap;
-  padding: 0 3rem;
-  border-right: 1px solid var(--color-line);
-  transition: opacity var(--dur-fast) var(--ease-soft), color var(--dur-fast);
 }
 
-.mch-trusted__item:hover {
-  opacity: 1;
-  color: var(--color-accent);
+.mch-trusted__card-meta {
+  font-size: var(--fs-caption);
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  margin-top: 0.2rem;
+}
+
+.mch-trusted__card-type {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @keyframes mch-marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-33.333%); }
 }

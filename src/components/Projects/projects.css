@@ -12,8 +12,13 @@
 }
 
 .mch-projects__heading {
-  font-size: var(--fs-h1);
-  max-width: 13em;
+  font-size: var(--fs-h2);
+  margin-bottom: 0.5rem;
+}
+
+.mch-projects__sub {
+  font-size: var(--fs-body);
+  max-width: 600px;
 }
 
 .mch-projects__filters {
@@ -24,14 +29,16 @@
 }
 
 .mch-projects__filter {
-  background: transparent;
+  background: #FFFFFF;
   border: 1px solid var(--color-line);
   color: var(--color-text-muted);
-  padding: 0.55rem 1.25rem;
-  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
   font-size: var(--fs-small);
+  font-weight: 600;
   letter-spacing: var(--ls-wide);
   transition: all var(--dur-fast) var(--ease-soft);
+  box-shadow: var(--shadow-sm);
 }
 
 .mch-projects__filter:hover {
@@ -42,62 +49,129 @@
 .mch-projects__filter.is-active {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: var(--color-secondary);
+  color: #FFFFFF;
 }
 
 .mch-projects__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 2rem;
 }
 
 .mch-projects__card {
   position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--dur-med) var(--ease-lux);
+  display: flex;
+  flex-direction: column;
+}
+
+.mch-projects__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201, 169, 110, 0.4);
 }
 
 .mch-projects__card-img {
-  aspect-ratio: 3 / 4;
+  position: relative;
+  aspect-ratio: 16 / 11;
   overflow: hidden;
-  border-radius: var(--radius-md);
-  background: var(--color-line);
+  background: var(--color-primary);
 }
 
 .mch-projects__card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s var(--ease-lux);
+  transition: transform 0.8s var(--ease-lux);
 }
 
 .mch-projects__card:hover .mch-projects__card-img img {
   transform: scale(1.08);
 }
 
+.mch-projects__card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(18, 16, 14, 0.82);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .mch-projects__card-meta {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.mch-projects__card-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding-top: 1rem;
   gap: 0.75rem;
-}
-
-.mch-projects__card-meta h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.25rem;
-}
-
-.mch-projects__card-meta span {
-  font-size: var(--fs-caption);
-  color: var(--color-text-muted);
 }
 
 .mch-projects__card-tag {
   font-size: var(--fs-caption);
   color: var(--color-accent);
   text-transform: uppercase;
-  letter-spacing: var(--ls-wide);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.mch-projects__card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.mch-projects__card-loc {
+  font-size: var(--fs-caption);
+  color: var(--color-text-muted);
   white-space: nowrap;
-  padding-top: 0.15rem;
+  font-weight: 500;
+}
+
+.mch-projects__card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  border-top: 1px dashed var(--color-line);
+  padding-top: 0.85rem;
+}
+
+.mch-projects__detail-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: var(--fs-caption);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.mch-projects__detail-row i {
+  color: var(--color-accent);
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 @media (max-width: 991px) {
@@ -105,9 +179,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 575px) {
   .mch-projects__grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 }

@@ -18,7 +18,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -53,8 +53,12 @@ export default function Navbar() {
         </nav>
 
         <div className="mch-nav__actions">
-          <Link to="/contact" className="btn-lux primary mch-nav__cta">
-            Start Your Project
+          <a href="tel:+911234567890" className="mch-nav__phone-link">
+            <i className="bi bi-telephone-fill text-gold" />
+            <span>+91 12345 67890</span>
+          </a>
+          <Link to="/contact" className="btn-lux primary mch-nav__cta sm">
+            Start Project
           </Link>
           <button
             className={`mch-nav__burger ${menuOpen ? "is-open" : ""}`}
@@ -95,14 +99,18 @@ export default function Navbar() {
                 </NavLink>
               </motion.div>
             ))}
-            <Link
-              to="/contact"
-              className="btn-lux primary"
-              style={{ marginTop: "1.5rem", alignSelf: "flex-start" }}
-              onClick={() => setMenuOpen(false)}
-            >
-              Start Your Project
-            </Link>
+            <div className="mch-nav__mobile-actions">
+              <a href="tel:+911234567890" className="mch-nav__mobile-phone">
+                <i className="bi bi-telephone-fill text-gold" /> Call: +91 12345 67890
+              </a>
+              <Link
+                to="/contact"
+                className="btn-lux primary w-100 text-center"
+                onClick={() => setMenuOpen(false)}
+              >
+                Start Your Project
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

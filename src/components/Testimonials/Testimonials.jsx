@@ -59,6 +59,13 @@ export default function Testimonials() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="mch-testimonials__card"
             >
+              <div className="mch-testimonials__stars" style={{ color: "var(--color-gold)", marginBottom: "1rem", display: "flex", gap: "0.25rem", fontSize: "1.1rem" }}>
+                <i className="bi bi-star-fill" />
+                <i className="bi bi-star-fill" />
+                <i className="bi bi-star-fill" />
+                <i className="bi bi-star-fill" />
+                <i className="bi bi-star-fill" />
+              </div>
               <p className="mch-testimonials__quote">"{t.quote}"</p>
               <div className="mch-testimonials__person">
                 <span className="mch-testimonials__avatar">

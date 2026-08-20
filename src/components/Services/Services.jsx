@@ -1,138 +1,174 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "../shared/Reveal";
 import "./services.css";
 
-const SERVICES = [
+const DISCIPLINES = [
   {
-    icon: "bi-building-fill-check",
-    title: "Hotel Consultancy",
-    desc: "Feasibility, positioning & full operational planning for new hotels.",
-    img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=900&auto=format&fit=crop",
+    id: "turnkey",
+    title: "Turnkey Project Execution",
+    badge: "Most Popular",
+    tagline: "From bare concrete shell to a fully functioning grand opening.",
+    desc: "We manage every contractor, architect, vendor, and permit on your behalf — delivering a turnkey venue on schedule and within budget.",
+    deliverables: [
+      "Location Feasibility & Target Market Analysis",
+      "Concept Development & Brand Identity",
+      "Architectural Civil & Interior Space Planning",
+      "Vendor Procurement & BOQ Cost Control",
+      "Soft Opening & Grand Launch Supervision",
+    ],
+    stat: "75 Days Average Turnaround",
+    img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    icon: "bi-cup-hot-fill",
-    title: "Restaurant Consultancy",
-    desc: "Concept-to-launch guidance for independent & chain restaurants.",
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900&auto=format&fit=crop",
+    id: "kitchen",
+    title: "Commercial Kitchen & MEP Engineering",
+    badge: "Core Expertise",
+    tagline: "Ergonomic, high-capacity kitchens engineered for peak-volume rush.",
+    desc: "We design high-efficiency kitchen workflows, CAD layouts, ventilation/exhaust MEP, and gas bank compliance to ensure zero bottleneck service.",
+    deliverables: [
+      "2D/3D Equipment CAD Layouts & MEP Schematics",
+      "Exhaust Hood, Fresh Air & Gas Bank Calculations",
+      "Equipment Specification & Direct Vendor Sourcing",
+      "HACCP & Hygiene Compliance Workflows",
+      "Cold Room & Storage Flow Optimization",
+    ],
+    stat: "15-20% Sourcing Cost Reduction",
+    img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    icon: "bi-cloud-fill",
-    title: "Cloud Kitchen Setup",
-    desc: "Delivery-first kitchen design built for speed & throughput.",
-    img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=900&auto=format&fit=crop",
+    id: "culinary",
+    title: "Culinary Direction & Menu Systems",
+    badge: "Signature Craft",
+    tagline: "Signature menus engineered for food-cost margins and guest loyalty.",
+    desc: "Our master chefs develop distinctive food and beverage concepts, standardize recipe costing sheets, and train your brigade for consistent excellence.",
+    deliverables: [
+      "Signature F&B Menu Conceptualization",
+      "Recipe Standardization & Yield Costing Sheets",
+      "Food Plating & Presentation Manuals",
+      "Ingredient Vendor Sourcing & Supply Chain Setup",
+      "Bar, Beverage & Cocktail Program Engineering",
+    ],
+    stat: "28-32% Controlled Food Cost",
+    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200&auto=format&fit=crop",
   },
   {
-    icon: "bi-shop",
-    title: "Commercial Kitchen Design",
-    desc: "Workflow-driven layouts for high-volume production kitchens.",
-    img: "https://images.unsplash.com/photo-1556909114-44e3e70034e2?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-brush",
-    title: "Interior Consultation",
-    desc: "Spaces that reflect brand identity without compromising flow.",
-    img: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-badge-ad",
-    title: "Restaurant Branding",
-    desc: "Naming, identity & guest experience design that travels.",
-    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-rulers",
-    title: "Kitchen Planning",
-    desc: "Layouts engineered for cover volume, safety & efficiency.",
-    img: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-tools",
-    title: "Equipment Planning",
-    desc: "Right-sized, vetted equipment specs & vendor sourcing.",
-    img: "https://images.unsplash.com/photo-1556910633-5099dc3671e4?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-person-badge",
-    title: "Chef Hiring",
-    desc: "Executive & head chef search matched to your concept.",
-    img: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-people-fill",
-    title: "Staff Recruitment",
-    desc: "Front & back-of-house teams, trained and launch-ready.",
-    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-egg-fried",
-    title: "Food Production",
-    desc: "Central kitchen & production systems that hold quality at scale.",
-    img: "https://images.unsplash.com/photo-1556910636-11c3f5b48d6e?q=80&w=900&auto=format&fit=crop",
-  },
-  {
-    icon: "bi-graph-up-arrow",
-    title: "Hospitality Operations",
-    desc: "Ongoing operational oversight, audits & performance systems.",
-    img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=900&auto=format&fit=crop",
+    id: "talent",
+    title: "Executive Talent & Operations SOPs",
+    badge: "Operational Mastery",
+    tagline: "Recruiting and drilling the teams that sustain high guest satisfaction.",
+    desc: "We headhunt executive chefs, restaurant general managers, and service staff, establishing rigorous operational SOPs, POS systems, and audit checks.",
+    deliverables: [
+      "Executive Chef & Department Head Headhunting",
+      "Front-of-House & Service Protocol Training",
+      "Inventory, POS & Billing Software Integration",
+      "Standard Operating Procedures (SOP Manuals)",
+      "90-Day Post-Opening Financial & Service Audits",
+    ],
+    stat: "92% Staff Retention Rate",
+    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop",
   },
 ];
 
 export default function Services() {
-  const [active, setActive] = useState(SERVICES[0]);
+  const [activeTab, setActiveTab] = useState(DISCIPLINES[0]);
 
   return (
-    <section className="mch-services section" id="services">
+    <section className="mch-matrix section" id="services">
       <div className="container-lux">
-        <div className="mch-services__head">
+        <div className="mch-matrix__head">
           <div>
             <Reveal>
-              <p className="eyebrow">What We Do</p>
+              <p className="eyebrow">End-to-End Capabilities</p>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mch-services__heading text-balance">
-                Fifteen disciplines. One accountable team.
+              <h2 className="mch-matrix__heading text-balance">
+                360° Turnkey Hospitaliy Solutions
               </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mch-matrix__sub text-muted-lux">
+                One unified consultancy replacing 6 separate vendors. Every discipline engineered for operational profitability.
+              </p>
             </Reveal>
           </div>
           <Reveal delay={0.1}>
             <Link to="/services" className="btn-lux outline">
-              All Services <i className="bi bi-arrow-up-right icon" />
+              View All 15 Services <i className="bi bi-arrow-up-right icon" />
             </Link>
           </Reveal>
         </div>
 
-        <div className="mch-services__body">
-          <div className="mch-services__list">
-            {SERVICES.map((s, i) => (
-              <Reveal
-                as="button"
-                key={s.title}
-                delay={i * 0.03}
-                y={14}
-                className={`mch-services__row ${active.title === s.title ? "is-active" : ""}`}
-                onMouseEnter={() => setActive(s)}
-                onFocus={() => setActive(s)}
-              >
-                <span className="mch-services__row-icon">
-                  <i className={`bi ${s.icon}`} />
-                </span>
-                <span className="mch-services__row-title">{s.title}</span>
-                <span className="mch-services__row-desc">{s.desc}</span>
-                <span className="mch-services__row-arrow">
-                  <i className="bi bi-arrow-up-right" />
-                </span>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mch-services__preview">
-            <img src={active.img} alt={active.title} key={active.title} />
-            <div className="mch-services__preview-caption">
-              <span>{active.title}</span>
-            </div>
-          </div>
+        {/* Tab Navigation */}
+        <div className="mch-matrix__nav">
+          {DISCIPLINES.map((d) => (
+            <button
+              key={d.id}
+              type="button"
+              className={`mch-matrix__tab-btn ${
+                activeTab.id === d.id ? "is-active" : ""
+              }`}
+              onClick={() => setActiveTab(d)}
+            >
+              <span className="mch-matrix__tab-title">{d.title}</span>
+              <span className="mch-matrix__tab-badge">{d.badge}</span>
+            </button>
+          ))}
         </div>
+
+        {/* Tab Content Display */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab.id}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="mch-matrix__display glass-card"
+          >
+            <div className="mch-matrix__content">
+              <span className="badge-gold">{activeTab.badge}</span>
+              <h3 className="mch-matrix__display-title">{activeTab.title}</h3>
+              <p className="mch-matrix__tagline">{activeTab.tagline}</p>
+              <p className="mch-matrix__desc">{activeTab.desc}</p>
+
+              <div className="mch-matrix__checklist">
+                <h4>Core Technical Deliverables:</h4>
+                <ul>
+                  {activeTab.deliverables.map((item, idx) => (
+                    <li key={idx}>
+                      <i className="bi bi-check-circle-fill text-gold" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mch-matrix__footer">
+                <div className="mch-matrix__stat-pill">
+                  <i className="bi bi-trophy-fill text-gold" />
+                  <span>{activeTab.stat}</span>
+                </div>
+                <Link to="/contact" className="btn-lux primary sm">
+                  Inquire For This Discipline <i className="bi bi-arrow-up-right icon" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="mch-matrix__media">
+              <img
+                src={activeTab.img}
+                alt={activeTab.title}
+                className="mch-matrix__img"
+                loading="lazy"
+              />
+              <div className="mch-matrix__media-overlay">
+                <span>{activeTab.title}</span>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

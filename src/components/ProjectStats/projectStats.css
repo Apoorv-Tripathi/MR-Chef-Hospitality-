@@ -1,38 +1,435 @@
-.mch-pstats {
-  background: var(--color-primary);
+.mch-estimator {
+  background: var(--color-bg-alt);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
 }
 
-.mch-pstats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.mch-pstats__item {
+.mch-estimator__header {
   text-align: center;
-  padding: 1.5rem 0;
+  max-width: 760px;
+  margin: 0 auto 3.5rem auto;
 }
 
-.mch-pstats__num {
-  display: block;
+.mch-estimator__heading {
+  font-size: var(--fs-h2);
+  margin-bottom: 1rem;
+}
+
+.mch-estimator__subtitle {
+  font-size: var(--fs-body);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mch-estimator__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Left Column: Steps */
+.mch-estimator__inputs {
+  background: #FFFFFF;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mch-estimator__step {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mch-estimator__step-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.mch-estimator__step-num {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  color: var(--color-gold);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: rgba(179, 18, 46, 0.08);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.mch-pstats__label {
-  display: block;
+.mch-estimator__step-head h3 {
+  font-size: var(--fs-h4);
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: 700;
+}
+
+.mch-estimator__step-head p {
+  font-size: var(--fs-caption);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Step 1: Venue Cards */
+.mch-estimator__venues {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.mch-estimator__venue-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 0.9rem 0.6rem;
+  background: var(--color-bg-alt);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  transition: all var(--dur-fast) var(--ease-soft);
+}
+
+.mch-estimator__venue-card i {
+  font-size: 1.35rem;
+  color: var(--color-text-muted);
+  transition: color var(--dur-fast);
+}
+
+.mch-estimator__venue-card:hover {
+  background: #FFFFFF;
+  border-color: var(--color-line);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.mch-estimator__venue-card.is-active {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: 0 4px 14px rgba(179, 18, 46, 0.15);
+}
+
+.mch-estimator__venue-card.is-active i {
+  color: var(--color-accent);
+}
+
+/* Step 2: Area Grid */
+.mch-estimator__area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+}
+
+.mch-estimator__area-btn {
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-alt);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
   font-size: var(--fs-small);
-  color: var(--color-secondary);
-  opacity: 0.65;
-  text-transform: uppercase;
-  letter-spacing: var(--ls-wide);
-  margin-top: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all var(--dur-fast) var(--ease-soft);
 }
 
-@media (max-width: 575px) {
-  .mch-pstats__grid {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 2.5rem;
+.mch-estimator__area-btn:hover {
+  background: #FFFFFF;
+  border-color: var(--color-line);
+}
+
+.mch-estimator__area-btn.is-active {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(179, 18, 46, 0.12);
+}
+
+/* Step 3: Modules */
+.mch-estimator__modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.65rem;
+}
+
+.mch-estimator__mod-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--color-bg-alt);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  text-align: left;
+  transition: all var(--dur-fast) var(--ease-soft);
+}
+
+.mch-estimator__mod-chip i {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  transition: color var(--dur-fast);
+}
+
+.mch-estimator__mod-chip:hover {
+  background: #FFFFFF;
+  border-color: var(--color-line);
+}
+
+.mch-estimator__mod-chip.is-checked {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mch-estimator__mod-chip.is-checked i {
+  color: var(--color-accent);
+}
+
+/* Location input */
+.mch-estimator__city-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 1px dashed var(--color-line);
+  padding-top: 1.25rem;
+}
+
+.mch-estimator__city-row label {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mch-estimator__city-input {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  background: var(--color-bg-alt);
+  transition: all var(--dur-fast);
+}
+
+.mch-estimator__city-input:focus {
+  background: #FFFFFF;
+  border-color: var(--color-accent);
+}
+
+/* Right Column: Output Card */
+.mch-estimator__output-wrap {
+  position: sticky;
+  top: 6rem;
+}
+
+.mch-estimator__output-card {
+  padding: clamp(1.5rem, 2.5vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.mch-estimator__output-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-caption);
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.mch-estimator__summary-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.mch-estimator__venue-tag {
+  padding: 0.35rem 0.8rem;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+}
+
+.mch-estimator__scale-tag {
+  padding: 0.35rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+}
+
+/* Timeline box */
+.mch-estimator__timeline-box {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  text-align: center;
+}
+
+.mch-estimator__timeline-label {
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.mch-estimator__timeline-val {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1.1;
+}
+
+.mch-estimator__timeline-val span {
+  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.mch-estimator__timeline-sub {
+  font-size: var(--fs-caption);
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.3rem;
+}
+
+/* Phases */
+.mch-estimator__phases h4,
+.mch-estimator__deliverables h4 {
+  font-size: var(--fs-small);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.mch-estimator__phases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mch-estimator__phase-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-xs);
+  font-size: var(--fs-caption);
+}
+
+.mch-estimator__phase-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  margin-right: 0.5rem;
+}
+
+.mch-estimator__phase-name {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  flex: 1;
+}
+
+.mch-estimator__phase-span {
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+/* Deliverables */
+.mch-estimator__deliverables ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.mch-estimator__deliverables li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: var(--fs-caption);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.4;
+}
+
+.mch-estimator__deliverables li i {
+  color: var(--color-gold);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* CTAs in output */
+.mch-estimator__cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.mch-estimator__guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: var(--fs-caption);
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 0.9rem;
+}
+
+@media (max-width: 991px) {
+  .mch-estimator__grid {
+    grid-template-columns: 1fr;
+  }
+  .mch-estimator__output-wrap {
+    position: static;
   }
 }

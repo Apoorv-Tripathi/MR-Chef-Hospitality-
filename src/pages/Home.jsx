@@ -1,13 +1,14 @@
 import Hero from "../components/Hero/Hero";
 import TrustedClients from "../components/TrustedClients/TrustedClients";
+import ProjectStats from "../components/ProjectStats/ProjectStats";
 import AboutPreview from "../components/AboutPreview/AboutPreview";
-import Journey from "../components/Journey/Journey";
 import Services from "../components/Services/Services";
+import Journey from "../components/Journey/Journey";
 import Projects from "../components/Projects/Projects";
+import Process from "../components/Process/Process";
 import Industries from "../components/Industries/Industries";
 import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import Testimonials from "../components/Testimonials/Testimonials";
-import Process from "../components/Process/Process";
 import CTA from "../components/CTA/CTA";
 
 export default function Home() {
@@ -15,14 +16,15 @@ export default function Home() {
     <>
       <Hero />
       <TrustedClients />
+      <ProjectStats />
       <AboutPreview />
-      <Journey />
       <Services />
+      <Journey />
       <Projects />
+      <Process />
       <Industries />
       <WhyChooseUs />
       <Testimonials />
-      <Process />
       <CTA />
     </>
   );
