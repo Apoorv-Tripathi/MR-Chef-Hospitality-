@@ -39,7 +39,7 @@ const REASONS = [
 
 const FAQS = [
   {
-    q: "How does Mr Chef Hospitality save money on kitchen equipment & fit-out?",
+    q: "How does Mr Chef Hospitality Services save money on kitchen equipment & fit-out?",
     a: "Because we procure equipment for dozens of venues annually, we have direct OEM manufacturer relationships. We pass factory wholesale pricing directly to you without middleman markups, saving our clients 15-20% on overall kitchen CAPEX.",
   },
   {
@@ -48,7 +48,7 @@ const FAQS = [
   },
   {
     q: "What is the difference between Turnkey Execution vs Advisory Consulting?",
-    a: "Advisory Consulting provides layout drawings, feasibility studies, and menu recipes for your team to execute. Turnkey Execution means Mr Chef manages everything from MEP contractor coordination and equipment fabrication to staff hiring, tastings, and opening night supervision.",
+    a: "Advisory Consulting provides layout drawings, feasibility studies, and menu recipes for your team to execute. Turnkey Execution means Mr Chef Hospitality Services manages everything from MEP contractor coordination and equipment fabrication to staff hiring, tastings, and opening night supervision.",
   },
   {
     q: "How do you ensure food costs remain within 28-32%?",

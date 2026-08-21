@@ -49,7 +49,7 @@ export default function Hero() {
 
       {/* Main Centered Content */}
       <motion.div className="container-lux mch-hero__inner" style={{ opacity }}>
-        {/* Centered Royal Crest Emblem */}
+        {/* Modern Corporate Agency Eyebrow Badge */}
         <motion.div
           className="mch-hero__crest-badge"
           initial={{ opacity: 0, y: 16 }}
@@ -57,11 +57,10 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="mch-hero__crest-icon">
-            <i className="bi bi-crown" />
-            <span>MC</span>
+            <i className="bi bi-layers-half" />
           </div>
-          <span className="mch-hero__crest-brand">MR CHEF HOSPITALITY</span>
-          <span className="mch-hero__crest-year">SINCE 2015</span>
+          <span className="mch-hero__crest-brand">MR CHEF HOSPITALITY SERVICES</span>
+          <span className="mch-hero__crest-year">ISO 9001:2015 STANDARDS &bull; SINCE 2015</span>
         </motion.div>
 
         {/* Eyebrow Guarantee & Rating */}
@@ -71,10 +70,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="mch-hero__guarantee-tag">BEST HOSPITALITY CONSULTANCY GUARANTEED</span>
+          <span className="mch-hero__guarantee-tag">COMMERCIAL KITCHEN &amp; HOTEL DESIGN CONSULTANCY</span>
           <div className="mch-hero__stars-row">
             <span className="mch-hero__stars">★★★★★</span>
-            <span className="mch-hero__rating-text">50+ Venues Launched • 4.9 Rating</span>
+            <span className="mch-hero__rating-text">50+ Flagship Venues Launched &bull; 4.9 Rating</span>
           </div>
         </motion.div>
 
@@ -85,7 +84,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          We Build Luxury Hotels &amp; High-Yield Restaurants
+          Engineering High-Yield Hotels &amp; Commercial Kitchens
         </motion.h1>
 
         {/* Subtitle */}
@@ -95,20 +94,24 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          Full-spectrum turnkey execution from feasibility and MEP kitchen architecture to executive chef hiring and profitable opening night.
+          From concept feasibility and CAD kitchen MEP engineering to executive chef hiring and profitable opening night — Mr Chef Hospitality Services delivers turnkey excellence with single-source accountability.
         </motion.p>
 
-        {/* Centered Glassmorphic Oval Pill Button */}
+        {/* Dual Agency Action Buttons */}
         <motion.div
           className="mch-hero__cta-wrap"
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          <a href="#estimator" className="mch-hero__oval-btn">
-            <span>CALCULATE PROJECT SCOPE</span>
-            <i className="bi bi-calendar2-check-fill" />
+          <a href="#estimator" className="mch-hero__oval-btn primary">
+            <span>Calculate Project Scope</span>
+            <i className="bi bi-calculator" />
           </a>
+          <Link to="/contact" className="mch-hero__oval-btn secondary">
+            <span>Book Consultation</span>
+            <i className="bi bi-arrow-up-right" />
+          </Link>
         </motion.div>
       </motion.div>
 

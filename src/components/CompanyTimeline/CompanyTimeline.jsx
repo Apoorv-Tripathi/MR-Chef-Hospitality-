@@ -2,7 +2,7 @@ import Reveal from "../shared/Reveal";
 import "./companyTimeline.css";
 
 const MILESTONES = [
-  { year: "2015", title: "Mr Chef Hospitality founded", desc: "Started with a focus on professional kitchen and hospitality consulting." },
+  { year: "2015", title: "Mr Chef Hospitality Services founded", desc: "Started with a focus on professional kitchen and hospitality consulting." },
   { year: "2018", title: "Recruitment desk added", desc: "Staffing became a core discipline alongside consulting." },
   { year: "2021", title: "Expanded across states", desc: "Took on hotel and restaurant projects beyond our home base." },
   { year: "2026", title: "Today", desc: "A hands-on team of consultants, chefs, and recruiters working across India." },

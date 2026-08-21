@@ -164,40 +164,57 @@
   font-weight: 400;
 }
 
-/* Glassmorphic Oval Pill CTA Button */
+/* Dual Action Buttons */
 .mch-hero__cta-wrap {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
   margin-bottom: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .mch-hero__oval-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 2.2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  gap: 0.65rem;
+  padding: 0.85rem 1.9rem;
   border-radius: var(--radius-full);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  color: #FFFFFF !important;
   font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   text-decoration: none;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
   transition: all var(--dur-fast) var(--ease-soft);
 }
 
-.mch-hero__oval-btn:hover {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
-  color: #12100E !important;
+.mch-hero__oval-btn.primary {
+  background: linear-gradient(135deg, #D4AF37 0%, #B89255 100%);
+  color: #0B0E14 !important;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  border: 1.5px solid #D4AF37;
+}
+
+.mch-hero__oval-btn.primary:hover {
+  background: linear-gradient(135deg, #E5C467 0%, #C9A96E 100%);
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(201, 169, 110, 0.45);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.55);
+}
+
+.mch-hero__oval-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.mch-hero__oval-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--color-gold);
+  color: var(--color-gold) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .mch-hero__oval-btn i {

@@ -7,23 +7,26 @@ export default function Footer() {
       <div className="container-lux mch-footer__top">
         <div className="mch-footer__brand">
           <Link to="/" className="mch-footer__logo">
-            <span className="mch-footer__logo-mark">MC</span>
-            <span>
-              Mr Chef <em>Hospitality</em>
-            </span>
+            <div className="mch-footer__symbol">
+              <i className="bi bi-layers-half" />
+            </div>
+            <div className="mch-footer__brand-text">
+              <span className="mch-footer__brand-title">MR CHEF</span>
+              <span className="mch-footer__brand-subtitle">HOSPITALITY SERVICES</span>
+            </div>
           </Link>
           <p>
-            Full-spectrum turnkey hospitality consultancy — concept feasibility, CAD kitchen engineering, executive talent recruitment, and operational systems for hotels, restaurants, resorts, and cloud kitchens across India.
+            India's premier commercial kitchen and hotel design consultancy. Full-spectrum turnkey solutions — concept feasibility, CAD kitchen MEP engineering, culinary systems, and operational commissioning for hotels, restaurants, and cloud kitchens.
           </p>
           <div className="mch-footer__contacts">
             <a href="tel:+911234567890">
               <i className="bi bi-telephone-fill text-gold" /> +91 12345 67890
             </a>
-            <a href="mailto:hello@mrchefhospitality.com">
-              <i className="bi bi-envelope-fill text-gold" /> hello@mrchefhospitality.com
+            <a href="mailto:info@mrchefhospitality.com">
+              <i className="bi bi-envelope-fill text-gold" /> info@mrchefhospitality.com
             </a>
             <span>
-              <i className="bi bi-geo-alt-fill text-gold" /> Mumbai • Lucknow • Patna • Gangtok
+              <i className="bi bi-geo-alt-fill text-gold" /> Mumbai &bull; Lucknow &bull; Patna &bull; Gangtok &bull; Dubai (GCC)
             </span>
           </div>
           <div className="mch-footer__social">
@@ -36,7 +39,7 @@ export default function Footer() {
 
         <div className="mch-footer__col">
           <h4>Navigation</h4>
-          <Link to="/about">About Mr Chef</Link>
+          <Link to="/about">About Mr Chef Services</Link>
           <Link to="/services">Turnkey Services</Link>
           <Link to="/projects">Delivered Projects</Link>
           <Link to="/industries">Industries Served</Link>
@@ -45,13 +48,13 @@ export default function Footer() {
         </div>
 
         <div className="mch-footer__col">
-          <h4>Expertise</h4>
-          <Link to="/services">Hotel &amp; Resort Consulting</Link>
+          <h4>Services</h4>
+          <Link to="/services">Hotel &amp; Resort Design</Link>
           <Link to="/services">Commercial Kitchen MEP</Link>
-          <Link to="/services">Cloud Kitchen Network</Link>
+          <Link to="/services">F&amp;B Concept Planning</Link>
           <Link to="/services">Menu &amp; Recipe Engineering</Link>
-          <Link to="/services">Executive Chef Sourcing</Link>
-          <Link to="/services">90-Day P&amp;L Audits</Link>
+          <Link to="/services">Executive Talent Sourcing</Link>
+          <Link to="/services">90-Day P&amp;L Stabilization</Link>
         </div>
 
         <div className="mch-footer__col mch-footer__newsletter">
@@ -67,7 +70,7 @@ export default function Footer() {
       </div>
 
       <div className="container-lux mch-footer__bottom">
-        <span>© {new Date().getFullYear()} Mr Chef Hospitality. All rights reserved. Registered Consultancy.</span>
+        <span>© {new Date().getFullYear()} Mr Chef Hospitality Services Pvt. Ltd. All rights reserved. ISO 9001:2015 Standards.</span>
         <div className="mch-footer__legal">
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/terms-conditions">Terms &amp; Conditions</Link>

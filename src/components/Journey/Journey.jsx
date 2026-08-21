@@ -145,7 +145,7 @@ export default function Journey() {
 
                 <div className="mch-trans__story-box">
                   <strong>
-                    <i className="bi bi-check-circle-fill" style={{ color: "#25D366" }} /> The Mr Chef Solution:
+                    <i className="bi bi-check-circle-fill" style={{ color: "#25D366" }} /> The Mr Chef Services Solution:
                   </strong>
                   <p>{activeCase.solution}</p>
                 </div>
@@ -169,7 +169,7 @@ export default function Journey() {
                 </Link>
                 <a
                   href={`https://wa.me/911234567890?text=${encodeURIComponent(
-                    `Hi Mr Chef Hospitality, I saw the case study for ${activeCase.client} (${activeCase.city}). I'd like to discuss a similar project.`
+                    `Hi Mr Chef Hospitality Services, I saw the case study for ${activeCase.client} (${activeCase.city}). I'd like to discuss a similar project.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

@@ -29,49 +29,89 @@ export default function Navbar() {
   }, [menuOpen]);
 
   return (
-    <header className={`mch-nav ${scrolled ? "is-solid" : ""}`}>
-      <div className="container-lux mch-nav__inner">
-        <Link to="/" className="mch-nav__brand" onClick={() => setMenuOpen(false)}>
-          <span className="mch-nav__brand-mark">MC</span>
-          <span className="mch-nav__brand-text">
-            Mr Chef <em>Hospitality</em>
-          </span>
-        </Link>
+    <header className={`mch-nav-wrapper ${scrolled ? "is-scrolled" : ""}`}>
+      {/* Top Corporate Agency Utility Bar */}
+      <div className="mch-topbar">
+        <div className="container-lux mch-topbar__inner">
+          <div className="mch-topbar__left">
+            <span className="mch-topbar__item">
+              <i className="bi bi-geo-alt-fill text-gold" />
+              <span>Mumbai &bull; Pan-India Delivery</span>
+            </span>
+            <span className="mch-topbar__divider">|</span>
+            <span className="mch-topbar__item">
+              <i className="bi bi-shield-check text-gold" />
+              <span>ISO 9001:2015 Standards</span>
+            </span>
+          </div>
 
-        <nav className="mch-nav__links">
-          {LINKS.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              className={({ isActive }) =>
-                `mch-nav__link ${isActive ? "is-active" : ""}`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="mch-nav__actions">
-          <a href="tel:+911234567890" className="mch-nav__phone-link">
-            <i className="bi bi-telephone-fill text-gold" />
-            <span>+91 12345 67890</span>
-          </a>
-          <Link to="/contact" className="btn-lux primary mch-nav__cta sm">
-            Start Project
-          </Link>
-          <button
-            className={`mch-nav__burger ${menuOpen ? "is-open" : ""}`}
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span />
-            <span />
-          </button>
+          <div className="mch-topbar__right">
+            <a href="mailto:info@mrchefhospitality.com" className="mch-topbar__item">
+              <i className="bi bi-envelope-fill text-gold" />
+              <span>info@mrchefhospitality.com</span>
+            </a>
+            <span className="mch-topbar__divider">|</span>
+            <a href="tel:+911234567890" className="mch-topbar__item mch-topbar__phone">
+              <i className="bi bi-telephone-fill text-gold" />
+              <span>+91 12345 67890</span>
+            </a>
+          </div>
         </div>
       </div>
 
+      {/* Main Navigation Bar */}
+      <div className="mch-nav">
+        <div className="container-lux mch-nav__inner">
+          {/* Professional Agency Brand Logo (No circular MC badge) */}
+          <Link to="/" className="mch-nav__brand" onClick={() => setMenuOpen(false)}>
+            <div className="mch-nav__brand-symbol">
+              <i className="bi bi-layers-half" />
+            </div>
+            <div className="mch-nav__brand-info">
+              <span className="mch-nav__brand-title">MR CHEF</span>
+              <span className="mch-nav__brand-subtitle">HOSPITALITY SERVICES</span>
+            </div>
+          </Link>
+
+          {/* Nav Links */}
+          <nav className="mch-nav__links">
+            {LINKS.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `mch-nav__link ${isActive ? "is-active" : ""}`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Right CTAs */}
+          <div className="mch-nav__actions">
+            <a href="tel:+911234567890" className="mch-nav__phone-link">
+              <i className="bi bi-telephone-fill text-gold" />
+              <span>+91 12345 67890</span>
+            </a>
+            <Link to="/contact" className="mch-nav__cta-btn">
+              <span>Start Project</span>
+              <i className="bi bi-arrow-up-right" />
+            </Link>
+            <button
+              className={`mch-nav__burger ${menuOpen ? "is-open" : ""}`}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -86,7 +126,7 @@ export default function Navbar() {
                 key={link.to}
                 initial={{ opacity: 0, x: -14 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.05 * i, duration: 0.4 }}
+                transition={{ delay: 0.04 * i, duration: 0.35 }}
               >
                 <NavLink
                   to={link.to}

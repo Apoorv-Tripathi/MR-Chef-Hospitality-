@@ -67,7 +67,7 @@ export default function Process() {
         <div className="mch-process__head">
           <div>
             <Reveal>
-              <p className="eyebrow">The Mr Chef Turnkey Standard</p>
+              <p className="eyebrow">The Mr Chef Services Turnkey Standard</p>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mch-process__heading text-balance">

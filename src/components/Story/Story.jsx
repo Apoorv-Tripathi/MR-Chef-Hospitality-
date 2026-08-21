@@ -18,7 +18,7 @@ export default function Story() {
 
           <Reveal delay={0.05}>
             <p>
-              Mr Chef Hospitality has grown into a trusted name in the
+              Mr Chef Hospitality Services has grown into a trusted name in the
               hospitality and culinary industry. Over a decade of experience
               has gone into providing professional, high-quality cooking and
               hospitality solutions to hotels, restaurants, and catering

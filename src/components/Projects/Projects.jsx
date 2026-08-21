@@ -77,7 +77,7 @@ export default function Projects() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mch-projects__heading text-balance">
-                Flagship Hospitality Venues Engineered by Mr Chef
+                Flagship Hospitality Venues Engineered by Mr Chef Services
               </h2>
             </Reveal>
             <Reveal delay={0.1}>

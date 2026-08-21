@@ -15,7 +15,7 @@ const TESTIMONIALS = [
     role: "Director, Copperleaf Resorts",
   },
   {
-    quote: "We've worked with three consultancies before. Mr Chef Hospitality was the first to stay past the ribbon-cutting.",
+    quote: "We've worked with three consultancies before. Mr Chef Hospitality Services was the first to stay past the ribbon-cutting.",
     name: "Farhan Qureshi",
     role: "CEO, Cloud Nine Kitchens",
   },

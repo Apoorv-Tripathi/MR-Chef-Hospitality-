@@ -37,7 +37,7 @@ export default function AboutPreview() {
           <Reveal>
             <div className="mch-about__crest">
               <span className="mch-about__crest-badge">
-                <i className="bi bi-shield-shaded" /> MR CHEF
+                <i className="bi bi-layers-half" /> MR CHEF HOSPITALITY SERVICES
               </span>
             </div>
           </Reveal>
@@ -53,7 +53,7 @@ export default function AboutPreview() {
           </Reveal>
           <Reveal delay={0.15}>
             <p className="mch-about__lead text-muted-lux text-balance">
-              Most consultancies hand over a deck and walk away. Mr Chef Hospitality is a hands-on turnkey consultancy that partners with hotel owners, restaurateurs, and cloud kitchen operators from raw concrete to profitable opening night.
+              Most consultancies hand over a deck and walk away. Mr Chef Hospitality Services is a hands-on turnkey consultancy that partners with hotel owners, restaurateurs, and cloud kitchen operators from raw concrete to profitable opening night.
             </p>
           </Reveal>
         </div>

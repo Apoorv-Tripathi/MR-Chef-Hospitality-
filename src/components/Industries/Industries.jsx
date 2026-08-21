@@ -54,7 +54,7 @@ export default function Industries() {
           <Reveal>
             <div className="mch-industries__crest">
               <span className="mch-industries__crest-text">
-                <i className="bi bi-crown" /> HOSPITALITY SECTORS
+                <i className="bi bi-layers-half" /> HOSPITALITY SECTORS
               </span>
             </div>
           </Reveal>

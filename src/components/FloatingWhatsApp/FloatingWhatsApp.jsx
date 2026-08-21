@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./floatingWhatsApp.css";
 
 const PHONE = "911234567890";
-const MESSAGE = "Hi Mr Chef Hospitality, I'd like to consult regarding a new hospitality project.";
+const MESSAGE = "Hi Mr Chef Hospitality Services, I'd like to consult regarding a new hospitality project.";
 
 export default function FloatingWhatsApp() {
   const [isOpen, setIsOpen] = useState(false);

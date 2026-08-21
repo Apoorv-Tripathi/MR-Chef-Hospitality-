@@ -49,7 +49,7 @@ export default function ContactContent() {
 
   const whatsappHref = sent
     ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        `Hi Mr Chef Hospitality — ${summary} My name is ${sent.name}, reach me at ${sent.phone || sent.email}.`
+        `Hi Mr Chef Hospitality Services — ${summary} My name is ${sent.name}, reach me at ${sent.phone || sent.email}.`
       )}`
     : "#";
 

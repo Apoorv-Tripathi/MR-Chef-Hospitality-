@@ -116,7 +116,7 @@ export default function ProjectStats() {
     const selectedModuleNames = MODULE_OPTIONS.filter((m) => selectedModules.includes(m.id))
       .map((m) => m.label)
       .join(", ");
-    return `Hi Mr Chef Hospitality, I calculated my project scope:\n• Venue: ${selectedVenue.title}\n• Scale: ${activeArea.labelShort}${customCity ? ` in ${customCity}` : ""}\n• Scope: ${selectedModuleNames}\n• Target Timeline: ~${calculation.estimatedWeeks} Weeks (${calculation.estimatedDays} Days)\n\nI would like to discuss next steps with your lead consultant.`;
+    return `Hi Mr Chef Hospitality Services, I calculated my project scope:\n• Venue: ${selectedVenue.title}\n• Scale: ${activeArea.labelShort}${customCity ? ` in ${customCity}` : ""}\n• Scope: ${selectedModuleNames}\n• Target Timeline: ~${calculation.estimatedWeeks} Weeks (${calculation.estimatedDays} Days)\n\nI would like to discuss next steps with your lead consultant.`;
   }, [selectedVenue, activeArea, selectedModules, customCity, calculation]);
 
   const waUrl = `https://wa.me/911234567890?text=${encodeURIComponent(waMessage)}`;
