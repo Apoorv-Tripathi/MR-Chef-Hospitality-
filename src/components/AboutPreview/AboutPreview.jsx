@@ -84,7 +84,7 @@ export default function AboutPreview() {
             </Reveal>
 
             <Reveal delay={0.2}>
-              <Link to="/about" className="btn-lux gold mch-about__btn">
+              <Link to="/about" className="btn-lux primary mch-about__btn">
                 Discover Our Heritage <i className="bi bi-arrow-up-right icon" />
               </Link>
             </Reveal>
@@ -94,7 +94,7 @@ export default function AboutPreview() {
           <Reveal delay={0.2} className="mch-about__arch-col">
             <div className="mch-about__arch-outer">
               <div className="mch-about__arch-badge">
-                <span>★ ARCHITECTURAL EXCELLENCE ★</span>
+                <span>TURNKEY SPATIAL CRAFT</span>
               </div>
               <div className="arch-frame-gold mch-about__arch-window">
                 <img

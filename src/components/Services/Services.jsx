@@ -84,7 +84,7 @@ export default function Services() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mch-matrix__heading text-balance">
-                360° Turnkey Hospitaliy Solutions
+                360° Turnkey Hospitality Solutions
               </h2>
             </Reveal>
             <Reveal delay={0.1}>

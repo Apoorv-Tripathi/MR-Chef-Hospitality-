@@ -1,6 +1,5 @@
 import Hero from "../components/Hero/Hero";
 import TrustedClients from "../components/TrustedClients/TrustedClients";
-import ProjectStats from "../components/ProjectStats/ProjectStats";
 import AboutPreview from "../components/AboutPreview/AboutPreview";
 import Services from "../components/Services/Services";
 import Journey from "../components/Journey/Journey";
@@ -16,7 +15,6 @@ export default function Home() {
     <>
       <Hero />
       <TrustedClients />
-      <ProjectStats />
       <AboutPreview />
       <Services />
       <Journey />

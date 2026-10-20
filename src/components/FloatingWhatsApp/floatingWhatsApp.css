@@ -1,7 +1,7 @@
 .mch-dock {
   position: fixed;
-  right: clamp(1rem, 3vw, 2rem);
-  bottom: clamp(1rem, 3vw, 2rem);
+  right: clamp(1.2rem, 3vw, 2.25rem);
+  bottom: clamp(1.2rem, 3vw, 2.25rem);
   z-index: 1500;
   display: flex;
   flex-direction: column;
@@ -10,39 +10,40 @@
 }
 
 .mch-dock__menu {
-  background: rgba(22, 19, 17, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(201, 169, 110, 0.3);
+  background: rgba(14, 15, 18, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-  padding: 0.75rem;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(197, 168, 128, 0.15);
+  padding: 0.65rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  width: 270px;
+  gap: 0.4rem;
+  width: 280px;
 }
 
 .mch-dock__item {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 0.75rem 0.9rem;
+  padding: 0.75rem 0.95rem;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   color: #FFFFFF;
-  transition: all var(--dur-fast);
+  text-decoration: none;
+  transition: all var(--dur-fast) var(--ease-soft);
 }
 
 .mch-dock__item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(197, 168, 128, 0.3);
   transform: translateX(-3px);
 }
 
 .mch-dock__item i {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   flex-shrink: 0;
 }
 
@@ -54,23 +55,24 @@
   color: var(--color-gold);
 }
 
-.mch-dock__item.is-calc i {
-  color: var(--color-accent-light);
+.mch-dock__item.is-consult i {
+  color: var(--color-gold-light);
 }
 
 .mch-dock__item div {
   display: flex;
   flex-direction: column;
+  gap: 0.1rem;
 }
 
 .mch-dock__item strong {
-  font-size: var(--fs-small);
+  font-size: 0.88rem;
   font-weight: 600;
   color: #FFFFFF;
 }
 
 .mch-dock__item span {
-  font-size: var(--fs-caption);
+  font-size: 0.74rem;
   color: rgba(255, 255, 255, 0.65);
 }
 
@@ -79,55 +81,47 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.85rem 1.4rem;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #8A0E22 100%);
+  padding: 0.8rem 1.4rem;
+  background: var(--color-primary);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(197, 168, 128, 0.35);
   border-radius: var(--radius-full);
   font-family: var(--font-body);
-  font-size: var(--fs-small);
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 600;
   letter-spacing: 0.03em;
-  box-shadow: 0 10px 28px rgba(179, 18, 46, 0.45);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
   cursor: pointer;
   position: relative;
+  transition: all var(--dur-fast) var(--ease-soft);
+}
+
+.mch-dock__trigger:hover {
+  border-color: var(--color-gold);
+  background: var(--color-primary-light);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 16px rgba(197, 168, 128, 0.2);
 }
 
 .mch-dock__trigger.is-active {
-  background: var(--color-primary);
+  background: var(--color-primary-light);
   border-color: var(--color-gold);
 }
 
+.mch-dock__pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 0 10px #25D366;
+}
+
 .mch-dock__trigger i {
-  font-size: 1.15rem;
-}
-
-.mch-dock__ring {
-  position: absolute;
-  inset: -3px;
-  border-radius: var(--radius-full);
-  border: 1.5px solid var(--color-gold);
-  opacity: 0;
-  animation: mch-dock-pulse 2.8s ease-out infinite;
-}
-
-@keyframes mch-dock-pulse {
-  0% {
-    transform: scale(0.98);
-    opacity: 0.7;
-  }
-  70% {
-    transform: scale(1.25);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.25);
-    opacity: 0;
-  }
+  font-size: 1.05rem;
+  color: var(--color-gold);
 }
 
 @media (max-width: 575px) {
   .mch-dock__trigger {
-    padding: 0.85rem 1.1rem;
+    padding: 0.75rem 1.15rem;
   }
 }

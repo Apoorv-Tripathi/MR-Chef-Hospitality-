@@ -1,9 +1,9 @@
 .mch-cta {
-  padding: clamp(5rem, 10vw, 8rem) 0;
+  padding: clamp(5rem, 9vw, 8rem) 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(201, 169, 110, 0.2);
+  border-top: 1px solid rgba(194, 167, 130, 0.15);
 }
 
 .mch-cta__glow {
@@ -13,7 +13,7 @@
   width: 580px;
   height: 580px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(179, 18, 46, 0.28), rgba(201, 169, 110, 0.12) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(143, 29, 44, 0.18), rgba(194, 167, 130, 0.08) 40%, transparent 70%);
   pointer-events: none;
   transition: left 0.4s var(--ease-soft), top 0.4s var(--ease-soft);
 }
@@ -34,7 +34,7 @@
 }
 
 .mch-cta__text {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.78);
   font-size: var(--fs-body-lg);
   margin-bottom: 2.75rem;
   line-height: 1.65;
@@ -57,14 +57,14 @@
   font-family: var(--font-body);
   font-weight: 600;
   padding: 0.85rem 1.4rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
   transition: all var(--dur-fast);
 }
 
 .mch-cta__phone:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--color-gold);
   border-color: var(--color-gold);
   transform: translateY(-2px);

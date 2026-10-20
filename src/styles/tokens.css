@@ -1,78 +1,89 @@
 /* =========================================================
-   MR CHEF HOSPITALITY — DESIGN TOKENS
-   Brand system: red + white + black, restrained and confident.
+   MR CHEF HOSPITALITY — DESIGN SYSTEM TOKENS
+   Refined Architectural & Haute Hospitality Brand System:
+   Noir Slate, Warm Champagne Sand, and Deep Bordeaux Wine.
+   Crafted with restraint, optical balance, and quiet luxury.
    ========================================================= */
 
 :root {
-  /* ---- Color: Red / Champagne Gold / Obsidian brand system ---- */
-  --color-primary: #12100E;        /* Deep obsidian warm-black */
-  --color-primary-light: #221F1C;
-  --color-primary-dark: #0A0908;   /* Deepest black */
-  --color-secondary: #FFFFFF;      /* Light text on dark sections */
-  --color-accent: #B3122E;         /* Brand crimson red */
-  --color-accent-hover: #930D23;
-  --color-accent-light: #DE5468;   /* Bright red pop */
-  --color-gold: #C9A96E;           /* Champagne warm gold */
-  --color-gold-light: #E7CF9B;     /* Light gold shimmer */
-  --color-gold-muted: rgba(201, 169, 110, 0.2);
-  --color-bg: #FFFFFF;             /* Crisp white */
-  --color-bg-alt: #FBF9F6;         /* Warm cashmere/parchment off-white */
-  --color-bg-subtle: #F4EFEA;      /* Subtle warm gray-beige */
-  --color-text: #191614;
-  --color-text-muted: #615C57;
+  /* ---- Brand Archetype: Architectural Noir & Warm Bronze ---- */
+  --color-primary: #0D0E11;        /* Deep architectural noir */
+  --color-primary-light: #16181D;  /* Rich graphite slate */
+  --color-primary-dark: #070809;   /* Purest midnight foundation */
+  --color-secondary: #FFFFFF;      /* Clean contrast text on dark backgrounds */
+  
+  /* ---- Brand Accent: Haute Hospitality Bordeaux Wine ---- */
+  --color-accent: #8F1D2C;         /* Dignified crimson wine */
+  --color-accent-hover: #761422;   /* Deep burgundy hover */
+  --color-accent-light: #A62B3C;   /* Subtle rosewood pop */
+  --color-accent-subtle: rgba(143, 29, 44, 0.08);
+
+  /* ---- Metallic Neutral: Warm Champagne Sand & Muted Bronze ---- */
+  --color-gold: #C2A782;           /* Warm champagne sand */
+  --color-gold-light: #DFCBB5;     /* Soft ivory shimmer */
+  --color-gold-muted: rgba(194, 167, 130, 0.12);
+  --color-gold-border: rgba(194, 167, 130, 0.25);
+  
+  /* ---- Canvas & Surfaces (Warm Natural Neutrals) ---- */
+  --color-bg: #FAF9F6;             /* Warm alabaster cream */
+  --color-bg-alt: #F3F1EC;         /* Soft warm stone */
+  --color-bg-subtle: #ECE9E2;      /* Tactile parchment */
+  --color-surface-white: #FFFFFF;
+  --color-text: #18191D;           /* Deep graphite body text */
+  --color-text-muted: #646772;     /* Refined secondary neutral */
   --color-white: #FFFFFF;
-  --color-line: rgba(23, 20, 18, 0.08);
-  --color-line-on-dark: rgba(255, 255, 255, 0.12);
+  --color-line: rgba(24, 25, 29, 0.08);
+  --color-line-on-dark: rgba(255, 255, 255, 0.08);
 
-  /* ---- Glass & Shadows ---- */
-  --glass-bg: rgba(255, 255, 255, 0.82);
-  --glass-bg-dark: rgba(26, 23, 21, 0.78);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-border-dark: rgba(201, 169, 110, 0.25);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 20px 40px -8px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06);
-  --shadow-lux: 0 24px 48px -12px rgba(18, 16, 14, 0.28);
+  /* ---- Glass & Optical Shadows ---- */
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-bg-dark: rgba(16, 18, 22, 0.84);
+  --glass-border: rgba(24, 25, 29, 0.08);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 16px 36px -6px rgba(0, 0, 0, 0.09), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lux: 0 24px 50px -12px rgba(7, 8, 9, 0.45);
 
-  /* ---- Typography ---- */
+  /* ---- Typography Hierarchy ---- */
   --font-display: "Fraunces", "Georgia", serif;
   --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --fs-hero: clamp(2.8rem, 5.8vw, 5.6rem);
-  --fs-h1: clamp(2.4rem, 4vw, 3.8rem);
-  --fs-h2: clamp(1.85rem, 2.8vw, 2.6rem);
-  --fs-h3: clamp(1.3rem, 1.8vw, 1.75rem);
-  --fs-h4: clamp(1.1rem, 1.3vw, 1.35rem);
-  --fs-body-lg: clamp(1.08rem, 1.2vw, 1.22rem);
-  --fs-body: 1.02rem;
-  --fs-small: 0.9rem;
-  --fs-caption: 0.78rem;
+  --fs-hero: clamp(2.6rem, 5.2vw, 4.8rem);
+  --fs-h1: clamp(2.3rem, 3.8vw, 3.6rem);
+  --fs-h2: clamp(1.8rem, 2.7vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 1.7vw, 1.65rem);
+  --fs-h4: clamp(1.05rem, 1.25vw, 1.3rem);
+  --fs-body-lg: clamp(1.06rem, 1.18vw, 1.2rem);
+  --fs-body: 1rem;
+  --fs-small: 0.88rem;
+  --fs-caption: 0.76rem;
 
   --lh-tight: 1.1;
-  --lh-heading: 1.22;
-  --lh-body: 1.68;
+  --lh-heading: 1.2;
+  --lh-body: 1.65;
 
-  --ls-eyebrow: 0.18em;
-  --ls-wide: 0.04em;
+  --ls-eyebrow: 0.16em;
+  --ls-wide: 0.03em;
 
-  /* ---- Spacing (editorial rhythm) ---- */
-  --space-section: clamp(4.5rem, 8vw, 8.5rem);
-  --space-section-sm: clamp(2.5rem, 5vw, 4.5rem);
-  --container-max: 1320px;
-  --container-pad: clamp(1.25rem, 4vw, 3.5rem);
+  /* ---- Spacing Rhythm ---- */
+  --space-section: clamp(4.5rem, 7.5vw, 8rem);
+  --space-section-sm: clamp(2.5rem, 4.5vw, 4.25rem);
+  --container-max: 1300px;
+  --container-pad: clamp(1.25rem, 4vw, 3.25rem);
 
-  /* ---- Motion ---- */
+  /* ---- Refined Easing Curves ---- */
   --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
-  --dur-fast: 0.25s;
-  --dur-med: 0.5s;
-  --dur-slow: 0.9s;
+  --dur-fast: 0.22s;
+  --dur-med: 0.45s;
+  --dur-slow: 0.85s;
 
-  /* ---- Misc ---- */
+  /* ---- Borders & Radii ---- */
   --radius-xs: 4px;
   --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
   --radius-full: 9999px;
   --border-hairline: 1px solid var(--color-line);
 }
@@ -86,9 +97,6 @@
   }
 }
 
-/* ---- Small-phone safety net ----
-   Collapses remaining 2-column grids to 1 column below 400px so nothing
-   feels cramped on entry-level phone widths (e.g. 360px, 375px). */
 @media (max-width: 400px) {
   .mch-industries__grid,
   .mch-phil__values-grid,

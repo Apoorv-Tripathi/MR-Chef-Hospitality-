@@ -30,39 +30,10 @@ export default function Navbar() {
 
   return (
     <header className={`mch-nav-wrapper ${scrolled ? "is-scrolled" : ""}`}>
-      {/* Top Corporate Agency Utility Bar */}
-      <div className="mch-topbar">
-        <div className="container-lux mch-topbar__inner">
-          <div className="mch-topbar__left">
-            <span className="mch-topbar__item">
-              <i className="bi bi-geo-alt-fill text-gold" />
-              <span>Mumbai &bull; Pan-India Delivery</span>
-            </span>
-            <span className="mch-topbar__divider">|</span>
-            <span className="mch-topbar__item">
-              <i className="bi bi-shield-check text-gold" />
-              <span>ISO 9001:2015 Standards</span>
-            </span>
-          </div>
-
-          <div className="mch-topbar__right">
-            <a href="mailto:info@mrchefhospitality.com" className="mch-topbar__item">
-              <i className="bi bi-envelope-fill text-gold" />
-              <span>info@mrchefhospitality.com</span>
-            </a>
-            <span className="mch-topbar__divider">|</span>
-            <a href="tel:+911234567890" className="mch-topbar__item mch-topbar__phone">
-              <i className="bi bi-telephone-fill text-gold" />
-              <span>+91 12345 67890</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation Bar */}
       <div className="mch-nav">
         <div className="container-lux mch-nav__inner">
-          {/* Professional Agency Brand Logo (No circular MC badge) */}
+          {/* Professional Agency Brand Logo */}
           <Link to="/" className="mch-nav__brand" onClick={() => setMenuOpen(false)}>
             <div className="mch-nav__brand-symbol">
               <i className="bi bi-layers-half" />
@@ -90,10 +61,6 @@ export default function Navbar() {
 
           {/* Right CTAs */}
           <div className="mch-nav__actions">
-            <a href="tel:+911234567890" className="mch-nav__phone-link">
-              <i className="bi bi-telephone-fill text-gold" />
-              <span>+91 12345 67890</span>
-            </a>
             <Link to="/contact" className="mch-nav__cta-btn">
               <span>Start Project</span>
               <i className="bi bi-arrow-up-right" />
@@ -140,9 +107,6 @@ export default function Navbar() {
               </motion.div>
             ))}
             <div className="mch-nav__mobile-actions">
-              <a href="tel:+911234567890" className="mch-nav__mobile-phone">
-                <i className="bi bi-telephone-fill text-gold" /> Call: +91 12345 67890
-              </a>
               <Link
                 to="/contact"
                 className="btn-lux primary w-100 text-center"

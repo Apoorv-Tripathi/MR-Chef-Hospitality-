@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./floatingWhatsApp.css";
 
@@ -8,18 +8,8 @@ const MESSAGE = "Hi Mr Chef Hospitality Services, I'd like to consult regarding 
 
 export default function FloatingWhatsApp() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === "/";
 
   const waHref = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
-
-  const handleEstimatorClick = (e) => {
-    if (isHome) {
-      e.preventDefault();
-      const el = document.getElementById("estimator");
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <aside className="mch-dock" aria-label="Quick Contact Dock">
@@ -41,29 +31,29 @@ export default function FloatingWhatsApp() {
               <i className="bi bi-whatsapp" />
               <div>
                 <strong>WhatsApp Direct</strong>
-                <span>Instant response in 15 mins</span>
+                <span>Instant response within 15 mins</span>
               </div>
             </a>
 
             <a href="tel:+911234567890" className="mch-dock__item is-phone">
               <i className="bi bi-telephone-fill" />
               <div>
-                <strong>Call Lead Consultant</strong>
+                <strong>Call Consultant</strong>
                 <span>+91 12345 67890</span>
               </div>
             </a>
 
-            <a
-              href={isHome ? "#estimator" : "/#estimator"}
-              onClick={handleEstimatorClick}
-              className="mch-dock__item is-calc"
+            <Link
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+              className="mch-dock__item is-consult"
             >
-              <i className="bi bi-calculator-fill" />
+              <i className="bi bi-calendar2-check-fill" />
               <div>
-                <strong>Scope &amp; ROI Estimator</strong>
-                <span>Calculate 60-second plan</span>
+                <strong>Book Consultation</strong>
+                <span>Schedule a feasibility discussion</span>
               </div>
-            </a>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
@@ -74,15 +64,15 @@ export default function FloatingWhatsApp() {
         className={`mch-dock__trigger ${isOpen ? "is-active" : ""}`}
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label="Quick Contact Menu"
-        initial={{ opacity: 0, scale: 0.7, y: 20 }}
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        transition={{ delay: 1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        whileHover={{ scale: 1.04 }}
+        whileTap={{ scale: 0.96 }}
       >
-        <span className="mch-dock__ring" />
+        <span className="mch-dock__pulse-dot" />
         <i className={`bi ${isOpen ? "bi-x-lg" : "bi-chat-dots-fill"}`} />
-        <span className="mch-dock__label">{isOpen ? "Close" : "Talk to Expert"}</span>
+        <span className="mch-dock__label">{isOpen ? "Close" : "Inquire Now"}</span>
       </motion.button>
     </aside>
   );

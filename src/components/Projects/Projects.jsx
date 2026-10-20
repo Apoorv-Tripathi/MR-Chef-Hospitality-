@@ -92,7 +92,7 @@ export default function Projects() {
             </Reveal>
           </div>
           <Reveal delay={0.1}>
-            <Link to="/projects" className="btn-lux gold">
+            <Link to="/projects" className="btn-lux outline">
               Explore All Projects <i className="bi bi-arrow-up-right icon" />
             </Link>
           </Reveal>
@@ -133,14 +133,6 @@ export default function Projects() {
                 </div>
 
                 <div className="mch-projects__card-meta">
-                  <div className="mch-projects__card-stars" style={{ color: "var(--color-gold)", fontSize: "0.9rem", display: "flex", gap: "0.2rem", marginBottom: "0.4rem" }}>
-                    <i className="bi bi-star-fill" />
-                    <i className="bi bi-star-fill" />
-                    <i className="bi bi-star-fill" />
-                    <i className="bi bi-star-fill" />
-                    <i className="bi bi-star-fill" />
-                  </div>
-
                   <div className="mch-projects__card-top">
                     <div>
                       <span className="mch-projects__card-tag">{p.category}</span>

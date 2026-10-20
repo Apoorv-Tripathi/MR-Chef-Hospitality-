@@ -57,7 +57,7 @@
 
 .mch-industries__card:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(201, 169, 110, 0.45);
+  border-color: rgba(194, 167, 130, 0.4);
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }

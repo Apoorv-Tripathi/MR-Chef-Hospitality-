@@ -33,7 +33,7 @@ export default function CTA() {
         </Reveal>
         <Reveal delay={0.15}>
           <div className="mch-cta__actions">
-            <Link to="/contact" className="btn-lux gold">
+            <Link to="/contact" className="btn-lux primary">
               Schedule Feasibility Call <i className="bi bi-arrow-up-right icon" />
             </Link>
             <a
