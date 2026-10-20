@@ -11,8 +11,6 @@ html {
 body {
   margin: 0;
   background-color: var(--color-bg);
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0c2.5 6 8.5 11 14.5 13.5 6 2.5 9.5 8 9.5 10.5s-3.5 8-9.5 10.5C32.5 37 26.5 42 24 48c-2.5-6-8.5-11-14.5-13.5-6-2.5-9.5-8-9.5-10.5s3.5-8 9.5-10.5C15.5 11 21.5 6 24 0z' fill='%23C2A782' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: repeat;
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -84,8 +82,6 @@ select:focus-visible {
   padding-top: var(--space-section);
   padding-bottom: var(--space-section);
   position: relative;
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0c2.5 6 8.5 11 14.5 13.5 6 2.5 9.5 8 9.5 10.5s-3.5 8-9.5 10.5C32.5 37 26.5 42 24 48c-2.5-6-8.5-11-14.5-13.5-6-2.5-9.5-8-9.5-10.5s3.5-8 9.5-10.5C15.5 11 21.5 6 24 0z' fill='%23C2A782' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-repeat: repeat;
 }
 
 .section-sm {
@@ -124,9 +120,7 @@ select:focus-visible {
 
 /* ---- Section helpers ---- */
 .section-alt {
-  background-color: var(--color-bg-alt) !important;
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0c2.5 6 8.5 11 14.5 13.5 6 2.5 9.5 8 9.5 10.5s-3.5 8-9.5 10.5C32.5 37 26.5 42 24 48c-2.5-6-8.5-11-14.5-13.5-6-2.5-9.5-8-9.5-10.5s3.5-8 9.5-10.5C15.5 11 21.5 6 24 0z' fill='%23C2A782' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
-  background-repeat: repeat;
+  background-color: var(--color-bg-alt);
 }
 .section-dark {
   background-color: var(--color-primary);
@@ -135,17 +129,6 @@ select:focus-visible {
     radial-gradient(ellipse at 80% 100%, rgba(143, 29, 44, 0.07) 0%, transparent 55%),
     url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0c2.5 6 8.5 11 14.5 13.5 6 2.5 9.5 8 9.5 10.5s-3.5 8-9.5 10.5C32.5 37 26.5 42 24 48c-2.5-6-8.5-11-14.5-13.5-6-2.5-9.5-8-9.5-10.5s3.5-8 9.5-10.5C15.5 11 21.5 6 24 0z' fill='%23C2A782' fill-opacity='0.048' fill-rule='evenodd'/%3E%3C/svg%3E");
   color: var(--color-secondary);
-}
-
-/* Ensure light section wrappers carry the checked lattice watermark */
-.mch-matrix,
-.mch-trans,
-.mch-projects,
-.mch-process,
-.mch-why,
-.mch-testimonials {
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 0c2.5 6 8.5 11 14.5 13.5 6 2.5 9.5 8 9.5 10.5s-3.5 8-9.5 10.5C32.5 37 26.5 42 24 48c-2.5-6-8.5-11-14.5-13.5-6-2.5-9.5-8-9.5-10.5s3.5-8 9.5-10.5C15.5 11 21.5 6 24 0z' fill='%23C2A782' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E") !important;
-  background-repeat: repeat;
 }
 
 /* ---- Buttons (Senior Editorial Architecture) ---- */
@@ -239,6 +222,13 @@ select:focus-visible {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
+  transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) var(--ease-soft);
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(194, 167, 130, 0.35);
 }
 
 .glass-card-dark {
@@ -248,6 +238,13 @@ select:focus-visible {
   border: 1px solid var(--glass-border-dark);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lux);
+  transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) var(--ease-soft);
+}
+
+.glass-card-dark:hover {
+  transform: translateY(-2px);
+  border-color: rgba(194, 167, 130, 0.35);
+  box-shadow: 0 28px 56px -10px rgba(0, 0, 0, 0.55);
 }
 
 .badge-gold {
